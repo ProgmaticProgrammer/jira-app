@@ -8,6 +8,7 @@ App {
 
   onInitTheme: {
     Theme.colors.tintColor = "#0052CC"
+    Theme.tabBar.textSize = sp(15)
   }
 
   DataModel {
@@ -25,8 +26,13 @@ App {
     drawerLogoSource: Qt.resolvedUrl("../assets/jira-logo.png")
 
     NavigationItem {
-      title: "Jira Worklogs"
+      title: qsTr("Worklogs")
       icon: IconType.clocko
+//      AppText {
+//          id: title
+//          text: qsTr("Worklogs")
+//          fontSize: sp(40)
+//      }
 
       NavigationStack {
         splitView: app.tablet && app.landscape
@@ -37,7 +43,7 @@ App {
     }
 
     NavigationItem {
-      title: "Jira Issues"
+      title: "Issues"
       icon: IconType.magic
 
       NavigationStack {
@@ -49,7 +55,7 @@ App {
     }
 
     NavigationItem {
-      title: "Jira Account"
+      title: "Account"
       icon: IconType.user
 
       NavigationStack {
